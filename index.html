@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Galleria Fotografica</title>
+  <style>
+    body { text-align: center; background: #000; color: #fff; font-family: sans-serif; }
+    img { max-width: 90vw; max-height: 90vh; display: none; margin: 20px auto; }
+  </style>
+</head>
+<body>
+  <h1>La mia galleria fotografica</h1>
+  <img src="foto1.jpg" class="slide">
+  <img src="foto2.jpg" class="slide">
+  <img src="foto3.jpg" class="slide">
+
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlide() {
+      slides.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+      index = (index + 1) % slides.length;
+    }
+    showSlide();
+    setInterval(showSlide, 3000); // cambia immagine ogni 3 secondi
+  </script>
+</body>
+</html>
